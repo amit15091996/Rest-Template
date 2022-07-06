@@ -35,7 +35,7 @@ public class DataService {
 			ResponseEntity<DataMain> result = restTemplate.exchange(url, HttpMethod.GET, httpEntity, DataMain.class);
 			log.info("Result : " + result.getBody());
 			if (result.getBody() != null) {
-				int inserted = dataOperation.insertData(result.getBody());
+				Boolean inserted = dataOperation.insertData(result.getBody());
 				log.info("Data Inserted Successfully : " + inserted);
 			}
 			return result.getBody();

@@ -41,7 +41,7 @@ public class DataService {
 			return result.getBody();
 
 		} catch (Exception e) {
-			throw new ExceptionConstant();
+			throw new ExceptionConstant(); 
 		}
 	}
 

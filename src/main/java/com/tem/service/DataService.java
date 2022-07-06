@@ -10,6 +10,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.tem.dao.DataOperation;
 import com.tem.entity.DataMain;
+import com.tem.exception.ExceptionConstant;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -29,10 +30,10 @@ public class DataService {
 	public DataMain getdata() {
 		log.info("Calling getdata() method");
 		try {
-			
+
 			HttpEntity<String> httpEntity = new HttpEntity<>("");
 			ResponseEntity<DataMain> result = restTemplate.exchange(url, HttpMethod.GET, httpEntity, DataMain.class);
-			log.info("Result : "+ result.getBody());
+			log.info("Result : " + result.getBody());
 			if (result.getBody() != null) {
 				int inserted = dataOperation.insertData(result.getBody());
 				log.info("Data Inserted Successfully : " + inserted);
@@ -40,9 +41,8 @@ public class DataService {
 			return result.getBody();
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			throw new ExceptionConstant();
 		}
-		return null;
 	}
 
 }

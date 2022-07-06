@@ -3,7 +3,6 @@ package com.tem.dao;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
-import org.apache.tomcat.util.ExceptionUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -41,10 +40,10 @@ public class DataOperation {
 				@Override
 				public Boolean doInPreparedStatement(PreparedStatement ps) throws SQLException, DataAccessException {
 
-					ps.setString(1, mainEntity.getStatus());
+					ps.setLong(1,   mainEntity.getData().getPrice());
 					ps.setString(2, mainEntity.getMessage());
 					ps.setString(3, mainEntity.getData().getTitle());
-					ps.setLong(4, mainEntity.getData().getPrice());
+					ps.setString(4, mainEntity.getStatus());
 					ps.setString(5, mainEntity.getData().getCategory().getName());
 					ps.setString(6, mainEntity.getData().getCategory().getId());
 					return ps.execute();

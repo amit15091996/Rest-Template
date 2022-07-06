@@ -6,9 +6,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.tem.dao.DataOperation;
 import com.tem.entity.DataMain;
+import com.tem.exception.ExceptionConstant;
 import com.tem.service.DataService;
 
 import lombok.extern.slf4j.Slf4j;
+
 @Slf4j
 @RestController
 public class DataController {
@@ -22,12 +24,9 @@ public class DataController {
 	@GetMapping("/get")
 	public DataMain getData() {
 		try {
-			DataMain getdata = dataService.getdata();
-			return getdata;
+			return dataService.getdata();
 		} catch (Exception e) {
-			e.printStackTrace();
-			 
-			throw new RuntimeException(e.getCause());
+			throw new ExceptionConstant();
 		}
 	}
 

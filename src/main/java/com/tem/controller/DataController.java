@@ -9,9 +9,7 @@ import com.tem.entity.DataMain;
 import com.tem.exception.ExceptionConstant;
 import com.tem.service.DataService;
 
-import lombok.extern.slf4j.Slf4j;
 
-@Slf4j
 @RestController
 public class DataController {
 

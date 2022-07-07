@@ -1,5 +1,7 @@
 package com.tem;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -7,7 +9,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 class RtProjectApplicationTests {
 
 	@Test
-	void contextLoads() {
+	void check() {
+		String str="";
+		assertEquals(null, str);
 	}
 
 }

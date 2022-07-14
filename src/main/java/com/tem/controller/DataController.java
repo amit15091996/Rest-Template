@@ -26,6 +26,7 @@ public class DataController {
 		} catch (Exception e) {
 			throw new ExceptionConstant();
 		}
+		
 	}
 
 }

@@ -19,7 +19,7 @@ public class DataController {
 	@Autowired
 	DataOperation dataOperation;
 
-	@GetMapping("/get")
+	@GetMapping("/get") 
 	public DataMain getData() {
 		try {
 			return dataService.getdata();
